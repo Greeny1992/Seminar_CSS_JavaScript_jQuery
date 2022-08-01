@@ -1,16 +1,13 @@
-* {
-    box-sizing: border-box;
-  }
-  
+ 
   .row::after {
     content: "";
     clear: both;
     display: table;
   }
-  
-  [class*="col-"] {
-    float: left;
-    padding: 15px;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
   }
   
   html {
@@ -21,6 +18,10 @@
     background-color: #9933cc;
     color: #ffffff;
     padding: 15px;
+  }
+
+  .row {
+    margin: 15px;
   }
   
   .menu ul {
