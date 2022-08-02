@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<title>AJAX</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+      //https://www.w3schools.com/jquery/ajax_ajax.asp
+      $.ajax({
+        url: "http://demo.angulararchitects.io/api/Airport",
+        type: "GET",
+        success: (data) => {
+            window.alert(JSON.stringify(data))
+        },
+      })
+</script>
+</head>
+<body>
+<h1>Example for a AJAX request</h1>
+</body>
+</html>

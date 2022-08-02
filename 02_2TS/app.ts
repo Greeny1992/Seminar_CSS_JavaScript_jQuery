@@ -1,5 +1,5 @@
 class Animal {
-    constructor(public name) { }
+    constructor(public name: string) { }
     move(meters: number): void {
         alert(this.name + " moved " + meters + "m.");
     }
@@ -8,7 +8,7 @@ class Animal {
 class Snake extends Animal {
     move():void {
         alert("Slithering...");
-        super.move(5);
+        super.move(2);
     }
 }
 
@@ -19,6 +19,7 @@ class Horse extends Animal {
     }
 }
 
+let n: number = 0;
 var sam: Snake = new Snake("Sammy the Python")
 var tom: Animal = new Horse("Tommy the Palomino")
 var but: HTMLButtonElement = document.createElement('button')
