@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<p id="p1">Please locate where 'locate' occurs!.</p>
+<p id="p1"><span>Please locate where 'locate' occurs!.</span></p>
 
 <button onclick="myFunction()">Try it</button>
 
@@ -10,7 +10,7 @@
 
 <script>
 function myFunction() {
-    let str = document.getElementById("p1").innerHTML;
+    let str = document.getElementById("p1").innerText;
     let pos = str.search("locate");
     document.getElementById("demo").innerHTML = pos;
 }
