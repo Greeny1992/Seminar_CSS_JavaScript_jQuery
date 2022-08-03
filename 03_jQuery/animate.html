@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Beispiel Animate css</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+        .my-element {
+            display: inline-block;
+            margin: 0 0.5rem;
+
+            animation: bounce; /* referring directly to the animation's @keyframe declaration */
+            animation-duration: 2s; /* don't forget to set a duration! */
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("myId").addEventListener("click", () => element.classList.add('animate__animated', 'animate__bounceOutLeft'));            
+        })
+    </script>
+  </head>
+  <body>
+    <h1 class="animate__animated animate__bounce">An animated element</h1>
+    <h2 class="my-element">Klassen animation</h2>
+    <button class="myId">
+        Test
+    </button>
+  </body>
+</html>

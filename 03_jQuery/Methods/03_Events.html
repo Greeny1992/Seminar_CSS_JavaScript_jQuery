@@ -4,30 +4,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
-        $("p").click(function () {
+        $("#singleclick").click(function () {
           $(this).hide();
         });
-        $("p").dblclick(function () {
+        $("#doubleclick").dblclick(function () {
           $(this).hide();
         });
         $("#p1").mouseenter(function () {
-          alert("You entered p1!");
+          $(this).css("background-color", "green")
         });
         $("#p1").mouseleave(function () {
-          alert("Bye! You now leave p1!");
+          $(this).css("background-color", "blue")
         });
         $("#p1").mousedown(function () {
-          alert("Mouse down over p1!");
+          $(this).css("background-color", "yellow")
         });
         $("#p1").mouseup(function () {
-          alert("Mouse up over p1!");
+          $(this).css("background-color", "red")
         });
-        $("#p1").hover(
+        $("#p2").hover(
           function () {
-            alert("You entered p1!");
+            $(this).css("background-color", "yellow")
           },
           function () {
-            alert("Bye! You now leave p1!");
+            $(this).css("background-color", "white")
           }
         );
         $("input").focus(function () {
@@ -36,7 +36,7 @@
         $("input").blur(function () {
           $(this).css("background-color", "green");
         });
-        $("p").on({
+        $("#p3").on({
           mouseenter: function () {
             $(this).css("background-color", "lightgray");
           },
@@ -51,10 +51,12 @@
     </script>
   </head>
   <body>
-    <p>If you click on me, I will disappear.</p>
-    <p>Click me away!</p>
-    <p>Click me too!</p>
+    <p id="singleclick">If you click on me, I will disappear.</p>
+    <p id="doubleclick">Click me away!</p>
+    <p id="p1">Mouse enter Mouse leave </p>
+    <p id="p2">Hover me</p>
     Name: <input type="text" name="fullname" /><br />
     Email: <input type="text" name="email" />
+    <p id="p3">Hover me</p>
   </body>
 </html>

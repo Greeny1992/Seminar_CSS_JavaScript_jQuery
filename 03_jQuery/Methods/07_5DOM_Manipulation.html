@@ -6,7 +6,7 @@
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-    $("p").remove(".test, .demo");
+    $("p").empty(".test, .demo");
   });
 });
 </script>
@@ -25,7 +25,7 @@ $(document).ready(function(){
 <body>
 
 <p>This is a paragraph.</p>
-<p class="test">This is p element with class="test".</p>
+<p class="test">This is p <b>element with</b> class="test".</p>
 <p class="test">This is p element with class="test".</p>
 <p class="demo">This is p element with class="demo".</p>
 

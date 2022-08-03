@@ -11,10 +11,10 @@ $(document).ready(function(){
   $("#btn2").click(function(){
     alert("HTML: " + $("#test").html());
   });
-  $("btn3").click(function(){
-    alert("Value: " + $("#test").val());
+  $("#btn3").click(function(){
+    alert("Value: " + $("input").val());
   });
-  $("btn4").click(function(){
+  $("#btn4").click(function(){
     alert($("#atag").attr("href"));
   });
 });
@@ -23,7 +23,7 @@ $(document).ready(function(){
 <body>
 
 <p id="test">This is some <b>bold</b> text in a paragraph.</p>
-<p>Name: <input type="text" id="test" value="Mickey Mouse"></p>
+<p>Name: <input type="text" id="testVal" value="Mickey Mouse"></p>
 <p><a href="https://www.google.at" id="atag">Google.at</a></p>
 
 

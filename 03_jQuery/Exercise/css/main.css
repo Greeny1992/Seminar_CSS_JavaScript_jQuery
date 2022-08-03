@@ -63,3 +63,7 @@ background: #323232;
 	color: whitesmoke;
 	margin-top: 10px;
 }
+
+#game-wrap .row:nth-child(1) .col:nth-child(1) {
+	background-color: green;
+}

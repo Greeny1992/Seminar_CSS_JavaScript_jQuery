@@ -6,7 +6,7 @@ var hasWinner = 0, moveCount=0;
 function boardMsg(x){
 	// Hier die Nachrichten am Brett anzeigen
 	// Code here
-
+	return $("#board").text(x);
 }
 
 function setTurn(){
@@ -41,7 +41,8 @@ $("#playButton").click(function (){
 	}
 	//Hier funktion die die PlayerNamen zuweisen 
 	// Code Hier
-
+	player1Name = $("#player-1-inp").val();
+	player2Name = $("#player-2-inp").val();
 
 
 	if(player1Name=="" || player2Name==""){
@@ -78,8 +79,8 @@ $(".col").click(function (){
 	if(turn==player1Name){
 		moveCount++;
 		// Befülle hier dieses Feld mit O
-
-
+		$("#game-wrap > .row:nth-child(" + row + ") > .col:nth-child( " + col +" )").text("O");
+		
 		grid[row][col] = 1;
 		var ifWon = winnerCheck(1,player1Name);
 		if(!ifWon){
@@ -87,8 +88,7 @@ $(".col").click(function (){
 				boardMsg("Match Drawn!");
 				moveCount=0;
 				//Hier Play again auf play button anzeigen
-
-				
+				$("#playButton").text("Play again");
 				hasWinner=1;
 				return;
 			}else{
@@ -105,8 +105,7 @@ $(".col").click(function (){
 	else if(turn==player2Name){
 		moveCount++;
 		// Befülle hier dieses Feld mit X
-
-
+		$("#game-wrap .row:nth-child(" + row+1 + ") .col:nth-child( " + col+1 + " )").text("X");
 		grid[row][col] = 2;
 		var ifWon = winnerCheck(2,player2Name);
 		if(!ifWon){
@@ -114,8 +113,7 @@ $(".col").click(function (){
 				boardMsg("Match Drawn!");
 				moveCount=0;
 				//Hier Play again auf play button anzeigen
-
-
+				$("#playButton").text("Play again");
 				hasWinner=1;
 				return;
 			}else{
@@ -152,8 +150,7 @@ function winnerCheck(n,playerName){
 		hasWinner = 1;
 		moveCount=0;
 		//Hier Play again auf play button anzeigen
-
-
+		$("#playButton").text("Play again");
 		return true;
 	}
 	return false;

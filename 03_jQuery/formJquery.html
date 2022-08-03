@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>jQuery Beispiel: einbinden und erste Anweisung</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".kb-password").keyup(function () {
+          var input = $(this).val();
+          if (input.length >= 8) {
+            $("#length").addClass("valide");
+          } else {
+            $("#length").removeClass("valide");
+          }
+          if (input.match(/[A-z]/)) {
+            $("#letter").addClass("valide");
+          } else {
+            $("#letter").removeClass("valide");
+          }
+          if (input.match(/[A-Z]/)) {
+            $("#capital").addClass("valide");
+          } else {
+            $("#capital").removeClass("valide");
+          }
+          if (input.match(/\d/)) {
+            $("#number").addClass("valide");
+          } else {
+            $("#number").removeClass("valide");
+          }
+          if (input.match(/([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|"([]!#-[^-~ \t]|(\\[\t -~]))+")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])/)) {
+            $("#special").addClass("valide");
+          } else {
+            $("#special").removeClass("valide");
+          }
+        });
+      });
+    </script>
+    <style>
+      .valide {
+        color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery Beispiel: Passwort Validierung</h1>
+    <body>
+      <input type="text" class="kb-password" />
+      <div class="criteria" id="length">Mindestens 8 Zeichen lang</div>
+      <div class="criteria" id="letter">Enthält einen Buchstaben</div>
+      <div class="criteria" id="capital">Enhält einen Großbuchstaben</div>
+      <div class="criteria" id="number">Enthält eine Zahl</div>
+      <div class="criteria" id="special">Enthält ein Sonderzeichen</div>
+    </body>
+  </body>
+</html>

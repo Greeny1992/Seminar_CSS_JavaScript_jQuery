@@ -6,11 +6,12 @@
 <script>
       //https://www.w3schools.com/jquery/ajax_ajax.asp
       $.ajax({
-        url: "http://demo.angulararchitects.io/api/Airport",
+        url: "http://demo.angulararchitects.io/api/Airpot",
         type: "GET",
         success: (data) => {
             window.alert(JSON.stringify(data))
         },
+        error: (err) => window.alert(JSON.stringify(err))
       })
 </script>
 </head>

@@ -5,8 +5,9 @@
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-    $("p").hide(1000);
-    alert("The paragraph is now hidden");
+    $("#p1").hide(3000, () => $("#p2").hide()).show(3000);
+
+    
   });
 });
 </script>
@@ -15,7 +16,8 @@ $(document).ready(function(){
 
 <button>Hide</button>
 
-<p>This is a paragraph with little content.</p>
+<p id="p1">This is a paragraph with little content.</p>
+<p id="p2">Second paragraph</p>
 
 </body>
 </html>
